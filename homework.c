@@ -42,7 +42,15 @@ int main() {
 #endif task3
 
 #ifdef task4
-wffwqwe
+
+int main() {
+    float pounds, kilograms;
+    scanf("%f", &pounds);
+    kilograms = pounds * 0.4059;
+    printf("%.2f\n", kilograms);
+    return 0;
+}
+
 #endif task4
 
 
