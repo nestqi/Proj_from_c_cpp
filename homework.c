@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task8
+#define task9
 
 #ifdef task1
 
@@ -102,6 +102,17 @@ int main() {
 
 #endif task8
 
+#ifdef task9
+
+int main() {
+    float length, width, area;
+    scanf("%f %f", &length, &width);
+    area = length * width;
+    printf("%.2f", area);
+    return 0;
+}
+
+#endif task9
 
 
 
