@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task10
+#define task11
 
 #ifdef task1
 
@@ -125,5 +125,19 @@ int main() {
 }
 
 #endif task10
+
+#ifdef task11
+
+int main() {
+    float distance, fuel_consumption, fuel_price, total_cost;
+    scanf("%f %f", &distance, &fuel_consumption);
+    fuel_price = 55.5;
+    total_cost = (distance * 2 * fuel_consumption / 100) * fuel_price;
+    printf("Price %.2f", total_cost);
+    return 0;
+}
+
+#endif
+
 
 
