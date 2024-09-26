@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task7
+#define task8
 
 #ifdef task1
 
@@ -88,6 +88,20 @@ int main() {
 }
 
 #endif task7
+
+#ifdef task8
+
+
+int main() {
+    float r1, r2, total_resistance;
+    scanf("%f %f", &r1, &r2);
+    total_resistance = (r1 * r2) / (r1 + r2);
+    printf("Total res: %.2f", total_resistance);
+    return 0;
+}
+
+#endif task8
+
 
 
 
