@@ -42,7 +42,7 @@ int main() {
 #endif task3
 
 #ifdef task4
-
+wffwqwe
 #endif task4
 
 
