@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task6
+#define task7
 
 #ifdef task1
 
@@ -76,6 +76,18 @@ int main() {
 }
 
 #endif task6
+
+#ifdef task7
+
+int main() {
+    float weight, price_per_100g, total_price;
+    scanf("%f %f", &weight, &price_per_100g);
+    total_price = (weight / 100) * price_per_100g;
+    printf("Total: %.2f\n", total_price);
+    return 0;
+}
+
+#endif task7
 
 
 
