@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task4
+#define task5
 
 #ifdef task1
 
@@ -52,5 +52,18 @@ int main() {
 }
 
 #endif task4
+
+#ifdef task5
+
+int main() {
+    float versts, kilometers;
+    scanf("%f", &versts);
+    kilometers = versts * 1.066;
+    printf("%.2f\n", kilometers);
+    return 0;
+}
+
+#endif task5
+
 
 
