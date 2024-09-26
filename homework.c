@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task11
+#define task12
 
 #ifdef task1
 
@@ -137,7 +137,23 @@ int main() {
     return 0;
 }
 
-#endif
+#endif task11
+
+#ifdef task12
+
+int main() {
+    float length, width, height, volume;
+    scanf("%f %f %f", &length, &width, &height);
+    volume = length * width * height;
+    printf("V: %.2f", volume);
+    return 0;
+}
+
+#endif task12
+
+
+
+
 
 
 
