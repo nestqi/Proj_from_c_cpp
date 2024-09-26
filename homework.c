@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task5
+#define task6
 
 #ifdef task1
 
@@ -64,6 +64,18 @@ int main() {
 }
 
 #endif task5
+
+#ifdef task6
+
+int main() {
+    float voltage, resistance, current;
+    scanf("%f %f", &voltage, &resistance);
+    current = voltage / resistance;
+    printf("Sila toka: %.2f", current);
+    return 0;
+}
+
+#endif task6
 
 
 
