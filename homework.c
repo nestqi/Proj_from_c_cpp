@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest4
+#define contest7
 
 #ifdef task1
 
@@ -70,6 +70,20 @@ int main() {
 }
 #endif // contest
 
+#ifdef contest2
+
+int main()
+{
+
+
+
+
+
+}
+
+#endif // contest2
+
+
 #ifdef contest3
 
 int main() {
@@ -110,8 +124,6 @@ int main() {
 
 #endif // contest4
 
-
-
 #ifdef contest5
 
 int main()
@@ -141,3 +153,28 @@ int main()
 
 
 #endif // contest5
+
+#ifdef contest7
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    for (int i = 1; i <=n;i++){
+        for (int j = i; j <= n; j++){
+            for (int k = j; k <= n; k++){
+                if (i * i + j * j == k * k) {
+                    printf("%d %d %d\n", i, j, k);
+                }
+           
+
+            }
+        
+
+        }
+
+
+    }
+}
+
+#endif // contest7
