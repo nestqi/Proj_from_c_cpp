@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest5
+#define contest4
 
 #ifdef task1
 
@@ -88,6 +88,29 @@ int main() {
 
 
 #endif // contest3
+
+#ifdef contest4
+
+int main() {
+    unsigned int N;
+    scanf("%u", &N);
+
+    int max = 0;
+
+    while (N > 0) {
+        int d = N % 10;
+        if (d > max) {
+            max = d;
+        }
+        N /= 10;
+    }
+    printf("%d\n", max);
+    return 0;
+}
+
+#endif // contest4
+
+
 
 #ifdef contest5
 
