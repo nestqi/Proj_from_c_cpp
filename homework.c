@@ -2,16 +2,20 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task12
+#define task1
 
 #ifdef task1
 
 int main() {
-    float radius, height, volume, p;
-    scanf("%f %f", &radius, &height);
-    p = 3.1415;
-    volume = p * radius * radius * height;
-    printf("%.2f", volume);
+    int n, i;
+    unsigned long long factorial = 1;
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; ++i) {
+        factorial *= i;
+    }
+
+    printf("%llu\n",factorial);
     return 0;
 }
 #endif task1 
