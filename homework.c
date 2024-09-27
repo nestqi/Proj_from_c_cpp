@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task1
+#define task2
 
 #ifdef task1
 
@@ -21,14 +21,31 @@ int main() {
 #endif task1 
 
 #ifdef task2
-int main() {
-    float radius, height, area, p;
-    scanf("%f %f", &radius, &height);
-    p = 3.14;
-    area = 2 * p * radius * (radius + height);
-    printf("%.2f\n", area);
+int main()
+{
+    int n, i, prostoe = 1;
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        prostoe = 0;
+    } else {
+        for (i = 2; i <= n / 2; i++){
+            if (n % i == 0) {
+                prostoe = 0;
+                break;
+
+            }
+        }
+    }
+
+    if (prostoe)
+        printf("%d - prost\n", n);
+    else
+        printf("%d - ne prost\n", n);
+
     return 0;
 }
+
 
 #endif task2
 
