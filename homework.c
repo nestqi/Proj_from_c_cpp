@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest7
+#define contest2
 
 #ifdef task1
 
@@ -74,11 +74,28 @@ int main() {
 
 int main()
 {
-
-
-
-
-
+    int N, count = 0, d;
+    scanf("%d", &N);
+    while (N > 0)
+    {
+        d = 0;
+        for (int i = 2; i <= (sqrt(N) + 1); i++)
+        {
+            if (N % i == 0)
+            {
+                d++;
+            }
+            if (d == 1)
+            {
+                break;
+            }
+        }
+        if (d == 0)
+            count++;
+        N--;
+    }
+    printf("%d", count);
+    return 0;
 }
 
 #endif // contest2
