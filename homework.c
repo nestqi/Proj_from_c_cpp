@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest2
+#define contest6
+
 
 #ifdef task1
 
@@ -100,7 +101,6 @@ int main()
 
 #endif // contest2
 
-
 #ifdef contest3
 
 int main() {
@@ -171,6 +171,12 @@ int main()
 
 #endif // contest5
 
+#ifdef contest6
+
+
+#endif // contest6
+
+
 #ifdef contest7
 
 int main()
@@ -195,3 +201,67 @@ int main()
 }
 
 #endif // contest7
+
+#ifdef contest8
+
+int main()
+{
+    int d, summa = 0, last = 0;
+    while (1) 
+    {
+        scanf("%d", &d);
+
+        if (d == -1)
+        {
+            break;
+        }
+
+        summa += d;
+
+        if (d % 2 == 0)
+        {
+            last = 1;
+        }
+
+        if (summa % 3 == 0 && last)
+        {
+            printf("Stop\n");
+            break;
+        }
+        else
+        {
+            printf("No\n");
+        }
+
+    }
+}
+
+#endif // contest8
+
+#ifdef contest10
+
+int main() {
+    int a, b, c;
+
+    scanf("%d %d %d", &a, &b, &c);
+    
+    if (a <= 0 || b <= 0 || c <= 0)
+    {
+        printf("No\n");
+    }
+    else if (a == b && b == c && a == c)
+    {
+        printf("Yes\n");
+    }
+    else if ((a == b && a != c) || (a == c && a != b) || (b == c && b != a)) 
+    {
+        printf("Yes\n");
+    }
+    else 
+    {
+        printf("No\n");
+    }
+    return 0;
+}
+
+#endif // contest10
