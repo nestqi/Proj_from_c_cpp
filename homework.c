@@ -174,8 +174,49 @@ int main()
 #ifdef contest6
 
 
-#endif // contest6
+int main() {
+    int N, M, K;
 
+    scanf("%d %d", &N, &M);
+
+    while (1) 
+    {
+        scanf("%d", &K);
+
+        if (K <= 0)
+        {
+            printf("You are full\n");
+            break;
+        }
+
+        if (K <= N * M && (K % N == 0 || K % M == 0)) 
+        {
+            if (K % M == 0)
+            {
+                N -= K / M;
+            }
+            else
+            {
+                M -= K / N;
+            }
+
+            if (N == 0 || M == 0)
+            {
+                printf("Chocolate is over\n");
+                break;
+            }
+
+            printf("%d %d\n", N, M);
+        }
+        else 
+        {
+            printf("%d %d\n", N, M);
+        }
+    }
+
+    return 0;
+}
+#endif // contest6
 
 #ifdef contest7
 
@@ -237,6 +278,11 @@ int main()
 }
 
 #endif // contest8
+
+#ifdef contest9
+
+#endif // contest9
+
 
 #ifdef contest10
 
