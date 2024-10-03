@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest6
+#define contest9
 
 
 #ifdef task1
@@ -280,6 +280,50 @@ int main()
 #endif // contest8
 
 #ifdef contest9
+
+int main() 
+{ 
+    int x, res = 0; 
+    char op;
+
+    scanf("%d", &x); 
+    res = x; 
+
+    while (1) 
+    { 
+        scanf(" %c", &op); 
+        if (op == '=') {
+            printf("%d\n", res); 
+            break; 
+        }
+
+        scanf("%d", &x); 
+
+        if (op == '+') 
+        {
+            res += x; 
+        } 
+        else if (op == '-') 
+        {
+            res -= x; 
+        } 
+        else if (op == '*') 
+        {
+            res *= x; 
+        } 
+        else if (op == '/') 
+        {
+            res /= x; 
+        } 
+        else if (op == '%') 
+        {
+            res %= x; 
+        } 
+        
+    }
+
+    return 0; 
+}
 
 #endif // contest9
 
