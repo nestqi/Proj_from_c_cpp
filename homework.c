@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task7
+#define task8
 
 #ifdef test
 #endif // test
@@ -162,6 +162,36 @@ int main()
     return 0;
 }
 #endif // task7
+
+#ifdef task8
+
+int main()
+{
+    int n;
+    double pi = 0.0;
+
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (i % 2 == 0) 
+        {
+            pi += 1.0 / (2 * i + 1);
+        } 
+        else
+        {
+            pi -= 1.0 / (2 * i + 1);
+        }
+    }
+    pi = pi * 4;
+
+
+    printf("%.15f\n", pi);
+    return 0;
+}
+
+#endif // task8
+
 
 
 
