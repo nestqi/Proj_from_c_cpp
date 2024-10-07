@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task4
+#define task6
 
 #ifdef test
 #endif // test
@@ -102,6 +102,42 @@ int main()
 
 
 #endif // task4
+
+#ifdef task5
+
+int main()
+{
+    int num, sum = 0;
+
+    scanf("%d", &num);
+    for (int i = 0; i < num; i++)
+    {
+        sum += 1 + 2 * i;
+    }
+    printf("%d", sum);
+    return 0;
+}
+
+#endif // task5
+
+#ifdef task6
+
+int main()
+{
+    float x, y;
+
+    for (x = -2; x <= 2 ; x+= 0.5)
+    {
+        y = -2.4 * x * x + 5 * x - 3;
+
+        printf("%.5f %.5f\n", x, y);
+    }
+    
+    return 0;
+}
+
+#endif // task6
+
 
 
 #ifdef contest1
