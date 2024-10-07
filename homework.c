@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task6
+#define task7
 
 #ifdef test
 #endif // test
@@ -137,6 +137,31 @@ int main()
 }
 
 #endif // task6
+
+#ifdef task7
+
+int main()
+{
+    int n;
+    float num, min;
+
+    scanf("%d %f", &n, &num);
+
+    min = num;
+
+    for (int i = 2; i <= n; i++)
+    {
+        scanf("%f", &num);
+        if (num < min)
+        {
+            min = num;
+        }
+    }
+    printf("min - %.5f", min);
+
+    return 0;
+}
+#endif // task7
 
 
 
