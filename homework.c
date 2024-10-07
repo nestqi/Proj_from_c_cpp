@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task3
+#define task4
 
 #ifdef test
 #endif // test
@@ -84,6 +84,24 @@ int main()
 }
 #endif // task3
 
+#ifdef task4
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+
+    for (int i = 1; i <= num; i++)
+    {
+        if (num % i == 0)
+            printf("%d\n", i);
+        
+    }
+    return 0;
+}
+
+
+#endif // task4
 
 
 #ifdef contest1
