@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest9
+#define task3
+
+#ifdef test
+#endif // test
+
 
 
 #ifdef task1
@@ -49,6 +53,38 @@ int main()
 
 
 #endif task2
+
+#ifdef task3
+
+int main()
+{
+    int lim;
+    scanf("%d", &lim);
+
+    for (int num = 2; num <= lim; num++)
+    {
+        int is_flag = 1;
+
+        for (int i = 2; i * i <= num; i++)
+        {
+            if (num % i == 0)
+            {
+                is_flag = 0;
+                break;
+            }
+        }
+
+        if (is_flag)
+        {
+            printf("%d\n", num);
+        }
+    }
+
+    return 0;
+}
+#endif // task3
+
+
 
 #ifdef contest1
 
