@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task8
+#define task9
 
 #ifdef test
 #endif // test
@@ -192,6 +192,34 @@ int main()
 
 #endif // task8
 
+#ifdef task9
+
+int main()
+{
+    int num, sum = 0;
+    scanf("%d", &num);
+    
+    for (int i = 1; i < num; i++)
+    {
+        if (num % i == 0)
+        {
+            sum += i;
+        }
+    }
+
+    if (sum == num)
+    {
+        printf("sovv - %d", num);
+    }
+    else
+    {
+        printf("ne sovv - %d", num);
+    }
+
+    return 0;
+}
+
+#endif // task9
 
 
 
