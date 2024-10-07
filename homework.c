@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define task9
+#define task10
 
 #ifdef test
 #endif // test
@@ -221,7 +221,32 @@ int main()
 
 #endif // task9
 
+#ifdef task10
 
+int main()
+{
+    int lim;
+    scanf("%d", &lim);
+
+    for (int num = 1; num <= lim; num++)
+    {
+        int sum = 0;
+        for (int i = 1; i < num; i++)
+        {
+            if (num % i == 0)
+            {
+                sum += i;
+            }
+        }
+        if (sum == num)
+        {
+            printf("sovv %d\n", num);
+        }
+    }
+    return 0;
+}
+
+#endif // task10
 
 #ifdef contest1
 
