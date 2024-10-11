@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest2
+#define contest3
 
 #ifdef test
 
@@ -93,3 +93,34 @@ int main()
     printf("%d", nom);
 }
 #endif // contest2
+
+#ifdef contest3
+
+int main()
+{
+    int N = 0, cnt = 0, flag= 0;
+    scanf("%d", &N);
+
+
+    for (int i = 1; i <= N; i++) 
+    {
+        for (int d = 2; d <= (sqrt(i) + 1); d++) 
+        {
+            flag = 0;
+            if (i % d == 0) 
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) 
+        {
+            cnt++;
+        }
+    }
+    printf("%d", cnt);
+    return 0;
+}
+
+
+#endif // contest3
