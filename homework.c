@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest1
+#define contest2
 
 #ifdef test
 
@@ -63,3 +63,33 @@ int main()
 }
 
 #endif // contest1
+
+#ifdef contest2
+
+int main()
+{
+    int N = 0, K = 0, minraz = 1000000, nom = 0;
+    scanf("%d", &N);
+
+    int x[1000];
+
+    for (int i = 0; i < N; i++) 
+    {
+        scanf("%d", &x[i]);
+    }
+
+    scanf("%d", &K);
+    K = abs(K);
+
+    for (int i = 0; i < N; i++) 
+    {
+        int b = abs(x[i]);
+        if (abs(b - K) < minraz) 
+        {
+            minraz = abs(b - K);
+            nom = (i + 1);
+        }
+    }
+    printf("%d", nom);
+}
+#endif // contest2
