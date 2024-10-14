@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define contest3
+#define contest4
 
 #ifdef test
 
@@ -124,3 +124,93 @@ int main()
 
 
 #endif // contest3
+
+#ifdef contest4
+#include <stdio.h>
+
+int main() {
+    int X[1000];
+    int N = 0, cnt = 0;
+
+    scanf("%d", &N);
+
+    for (int i = 0; i < N; i++)
+    {
+        scanf("%d", &X[i]);
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        int left = X[(i - 1 + N) % N];
+        int right = X[(i + 1) % N];
+        if (X[i] < left && X[i] < right)
+        {
+            cnt++;
+        }
+    }
+
+    printf("%d\n", cnt);
+
+    return 0;
+}
+#endif // contest4
+
+#ifdef contest5
+int main()
+{
+    int X[1000], Y[1000], Z[1000];
+    int nX = 0, nZ = 0, nY = 0;
+    int k = 0;
+
+    scanf("%d", &nX);
+    for (int i = 0; i < nX; i++)
+    {
+        scanf("%d", &X[i]);
+    }
+
+    scanf("%d", &nY);
+    for (int i = 0; i < nY; i++)
+    {
+        scanf("%d", &Y[i]);
+    }
+
+    for (int i = 0; i < nX; i++)
+    {
+        for (int j = 0; j < nY; j++)
+        {
+            if (X[i] == Y[j])
+            {
+                int flag = 0;
+                for (int k = 0; k < nZ; k++)
+                {
+                    if (Z[k] == X[i])
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                if (!flag)
+                {
+                    Z[nZ] = X[i];
+                    nZ++;
+                }
+
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < nZ; i++)
+    {
+        k++;
+    }
+    printf("%d\n", k);
+    for (int i = 0; i < nZ; i++)
+    {
+        printf("%d\n", Z[i]);
+    }
+
+
+}
+
+#endif // contest5
