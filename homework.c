@@ -1,9 +1,9 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define task2
+#define task1_06
 
 
-#ifdef task1
+#ifdef task1_08
 
 /// 1. Строка состоит всего из одного какого-то слова. В слово входят буквы и цифры. 
 /// Длина строки не более 10000. Ваша задача переместить все цифры в конец строки. Порядок цифр и букв необходимо сохранить
@@ -52,9 +52,9 @@ int main()
 }
 
 
-#endif // task1
+#endif // task1_08
 
-#ifdef task2
+#ifdef task2_08
 int main() {
 	char team1[20], team2[20];
 	int team_1_round, team_2_round, team_1_final, team_2_final;
@@ -126,9 +126,9 @@ int main() {
 	return 0;
 }
 
-#endif // task2
+#endif // task2_08
 
-#ifdef task3
+#ifdef task3_08
 void chet_nechet(char* input, char* output)
 {
 	int i = 0, chet = 0;
@@ -165,9 +165,9 @@ int main()
 }
 
 
-#endif // task3
+#endif // task3_08
 
-#ifdef task4
+#ifdef task4_08
 
 int calc(const char* ex)
 {
@@ -212,9 +212,9 @@ int main()
 
 
 
-#endif // task4
+#endif // task4_08
 
-#ifdef task5
+#ifdef task5_08
 
 int palidrome(const char* str) 
 {
@@ -264,7 +264,17 @@ int main() {
 
 	return 0;
 }
-#endif // task5
+#endif // task5_08
+
+#ifdef task1_06
+
+#endif 
+
+
+
+
+
+
 
 #ifdef test
 
