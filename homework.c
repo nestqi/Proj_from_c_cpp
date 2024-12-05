@@ -1,6 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define task1_06
+#define task5_06
 
 
 #ifdef task1_08
@@ -268,11 +268,253 @@ int main() {
 
 #ifdef task1_06
 
-#endif 
+int islocalmin(int** mat, int n, int i, int j)
+{
+	int current = mat[i][j], sosedi[8], k = 0;
+
+	sosedi[k++] = mat[(i - 1 + n) % n][j];
+	sosedi[k++] = mat[(i + 1) % n][j];
+	sosedi[k++] = mat[i][(j - 1 + n) % n];
+	sosedi[k++] = mat[i][(j + 1) % n];
+	sosedi[k++] = mat[(i - 1 + n) % n][(j - 1 + n) % n];
+	sosedi[k++] = mat[(i - 1 + n) % n][(j + 1) % n];
+	sosedi[k++] = mat[(i + 1) % n][(j - 1 + n) % n];
+	sosedi[k++] = mat[(i + 1) % n][(j + 1) % n];
+
+	for (int l = 0; l < k; l++) {
+		if (current >= sosedi[l]) {
+			return 0;
+		}
+	}
+	return 1;
+
+}
+
+void findlocalmin(int** mat, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (islocalmin(mat, n, i, j))
+			{
+				printf("local min (%d, %d)", i, j);
+			}
+		}
+	}
+}
+
+int main()
+{
+	int n;
+	scanf('%d', &n);
+
+	int** mat = malloc(n * sizeof(int*));
+	for (int i = 0; i < n; i++) 
+	{
+		mat[i] = malloc(n * sizeof(int));
+	}
+	printf("Введите элементы матрицы %dx%d:\n", n, n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			scanf('%d', &mat[i][j]);
+		}
+	}
+
+	findlocalmin(mat, n);
+
+	for (int i = 0; i < n; i++) {
+		free(mat[i]);
+	}
+	free(mat);
+	return 0;
+}
 
 
 
 
+#endif // task1_06
+
+#ifdef task2_06
+
+void finding(int mat[3][3])
+{
+	for (int j = 0; j < 3; j++)
+	{
+		int flag = 1;
+		for (int i = 1; i < 3; i++)
+		{
+			if (mat[i][j] <= mat[i-1][j])
+			{
+				flag = 0;
+				break;
+			}
+		}
+		if (flag)
+		{
+			printf(" stolbec %d", j);
+		}
+
+	}
+}
+
+int main()
+{
+	int mat[3][3];
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			scanf("%d", &mat[i][j]);
+		}
+	}
+
+	finding(mat);
+	return 0;
+}
+
+#endif // task2_06
+
+#ifdef task3_06
+
+
+void finding(int mat[3][3]) {
+	int found;
+	for (int i = 0; i < 3; i++) 
+	{
+		found = 1;
+		for (int j = 0; j < 3; j++) 
+		{
+			int isFoundInRow = 0;
+			for (int k = 0; k < 3; k++) 
+			{
+				if (mat[j][k] == mat[0][i]) 
+				{
+					isFoundInRow = 1;
+					break;
+				}
+			}
+			if (!isFoundInRow) 
+			{
+				found = 0;
+				break;
+			}
+		}
+		if (found) 
+		{
+			printf(" chislo %d ", mat[0][i]);
+		}
+	}
+}
+
+int main() {
+	int mat[3][3];
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &mat[i][j]);
+		}
+	}
+
+	finding(mat);
+
+	return 0;
+}
+
+
+#endif // task3_06
+
+#ifdef task4_06
+int main() {
+	int mat[3][3];
+	int Points[3], Count = 0;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &mat[i][j]);
+		}
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			int Point = 1;
+
+			for (int k = 0; k < 3; k++) {
+				if (mat[i][k] < mat[i][j]) {
+					Point = 0;
+					break;
+				}
+			}
+
+			if (Point) {
+				for (int k = 0; k < 3; k++) {
+					if (mat[k][j] > mat[i][j]) {
+						Point = 0;
+						break;
+					}
+				}
+			}
+
+			if (Point) {
+				Points[Count++] = mat[i][j];
+				printf("(%d, %d)", i, j);
+			}
+		}
+	}
+
+	if (Count == 0) {
+		printf("net.\n");
+	}
+
+	return 0;
+}
+
+
+#endif // task4_06
+
+#ifdef task5_06
+
+void swapRows(int matrix[3][3], int row1, int row2) {
+	for (int i = 0; i < 3; i++) {
+		int temp = matrix[row1][i];
+		matrix[row1][i] = matrix[row2][i];
+		matrix[row2][i] = temp;
+	}
+}
+
+int main() {
+	int matrix[3][3];
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			scanf("%d", &matrix[i][j]);
+		}
+	}
+
+	for (int i = 0; i < 3; i++) {
+		int zeroRow = -1;
+		for (int j = i; j < 3; j++) {
+			if (matrix[j][i] == 0) {
+				zeroRow = j;
+				break;
+			}
+		}
+
+		if (zeroRow != -1) {
+			swapRows(matrix, i, zeroRow);
+		}
+	}
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d ", matrix[i][j]);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+
+#endif // task5_06
 
 
 
